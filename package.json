@@ -22,6 +22,9 @@
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-arrow-functions": "^7.12.1",
     "@babel/plugin-transform-template-literals": "^7.12.1",
-    "@babel/preset-react": "^7.12.10"
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.12.1",
+    "webpack-cli": "^4.3.1"
   }
 }
