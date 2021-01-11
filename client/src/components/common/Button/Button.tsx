@@ -5,8 +5,8 @@ type ButtonProps = {
   children?: string;
 };
 
-const Button = ({ children }) => {
-  return <S.Button>{children}</S.Button>;
+const Button = (props: ButtonProps) => {
+  return <S.Button {...props} />;
 };
 
 export default Button;
