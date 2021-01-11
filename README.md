@@ -1,13 +1,20 @@
 # Granzort2
 
+### Convention
+`env` : env settings
+`feat` : feature
+`test` : codes for testing written with storybook, jest
+`chore` : chore
+`fix` : fix
 
+### Stack
 |FE|BE|etc|
 |-|-|-|
 |typescript|typescript|docker|
 |react|node.js|aws ec2,s3|
 |react-router|express|google-analytics|
 |redux|mongoDB|CI/CD|
-|formik|jest|github actions|
+|formik|jest|nginx|
 |webpack||eslint|
 |babel||prettier|
 |storybook||figma|
@@ -15,6 +22,7 @@
 |material-ui|||
 |redux-saga|||
 
+### Milestone
 4 - node.js/mongoDB 훑어보기  
 5 - node.js/mongoDB 깊이보기  
 6 - 설계(UI 설계, 데이터 스키마 정의), Design 완성, Storybook 훑어보기  
