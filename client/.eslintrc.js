@@ -12,7 +12,9 @@ module.exports = {
   ],
   plugins: ['@typescript-eslint'],
   rules: {
+    '@typescript-eslint/explicit-function-return-type': [0],
     'prettier/prettier': 0,
     'react/prop-types': [0],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
 };
