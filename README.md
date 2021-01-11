@@ -1,11 +1,11 @@
 # Granzort2
 
 ### Convention
-`env` : env settings
-`feat` : feature
-`test` : codes for testing written with storybook, jest
-`chore` : chore
-`fix` : fix
+`env` : env settings  
+`feat` : feature  
+`test` : codes for testing written with storybook, jest  
+`chore` : chore  
+`fix` : fix  
 
 ### Stack
 |FE|BE|etc|
