@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './ButtonStyle';
 
-type ButtonProps = {
+export type ButtonProps = {
   children?: string;
 };
 
