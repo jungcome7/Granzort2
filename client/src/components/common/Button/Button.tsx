@@ -3,6 +3,7 @@ import * as S from './ButtonStyle';
 
 export type ButtonProps = {
   children?: string;
+  type?: 'submit' | 'reset';
 };
 
 const Button = (props: ButtonProps) => {

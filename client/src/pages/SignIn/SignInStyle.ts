@@ -21,6 +21,18 @@ export const Logo = styled.div`
   margin: 40px;
 `;
 
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+export const Input = styled.input`
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  width: 180px;
+`;
+
 export const SignInButton = styled(Button)`
   margin: 5px;
   width: 200px;
