@@ -25,8 +25,8 @@
 ### Milestone
 1 - ~~node.js/mongoDB 훑어보기~~  
 2 - ~~node.js/mongoDB 깊이보기~~  
-3 - 설계(UI 설계, 데이터 스키마 정의), Design 완성, Storybook 훑어보기  
-4 - eslint, prettier, webpack, babel, ts, jest 환경설정, jest 훑어보기  
+3 - ~~설계(UI 설계, 데이터 스키마 정의), Design 완성, Storybook 훑어보기~~
+4 - ~~eslint, prettier, webpack, babel, ts, jest 환경설정, jest 훑어보기~~  
 5 - jest, Storybook 적용하여 UI 컴포넌트 생성(formik 사용)  
 6 - backend api 설계(jest)  
 7 - redux 및 redux-saga 세팅  
