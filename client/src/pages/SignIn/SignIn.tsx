@@ -11,7 +11,13 @@ const initialValues: FormValues = {
   email: '',
 };
 
-const onSubmit = (values: FormValues) => console.log(values);
+const onSubmit = (values: FormValues, onSubmitProps) => {
+  console.log(values);
+  console.log(onSubmitProps);
+  // Submit 성공 api response를 받은 후
+  onSubmitProps.setSubmitting(false);
+  onSubmitProps.resetForm();
+};
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email format22').required('Required'),
@@ -27,7 +33,7 @@ const SignIn = () => {
           <S.Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
-            validateOnMount={true}
+            // validateOnMount
             onSubmit={onSubmit}
           >
             {(formik) => {
@@ -40,7 +46,10 @@ const SignIn = () => {
                     name="email"
                   />
                   <S.ErrorMessage name="email" component="div" />
-                  <S.SignInButton type="submit" disabled={!formik.isValid}>
+                  <S.SignInButton
+                    type="submit"
+                    disabled={formik.isSubmitting || !formik.isValid}
+                  >
                     Sign In
                   </S.SignInButton>
                 </S.Form>
