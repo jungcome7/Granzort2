@@ -2,6 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import { Header } from '../../components/Header';
 import * as S from './SignInStyle';
+import * as Yup from 'yup';
 
 type Errors = {
   email?: string;
@@ -28,11 +29,16 @@ const validate = (values: FormValues) => {
   return errors;
 };
 
+const validationSchema = Yup.object({
+  email: Yup.string().email('Invalid email format22').required('Required'),
+});
+
 const SignIn = () => {
   const formik = useFormik({
     initialValues,
     onSubmit,
-    validate,
+    // validate,
+    validationSchema,
   });
 
   // console.log(formik.values);
