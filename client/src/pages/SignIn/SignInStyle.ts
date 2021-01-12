@@ -26,6 +26,7 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
 `;
+
 export const Input = styled.input`
   background-color: white;
   padding: 10px;
@@ -48,4 +49,8 @@ export const SignInGoogleButton = styled(Button)`
   border: 2px solid grey;
   background-color: white;
   color: grey;
+`;
+
+export const Error = styled.div`
+  color: red;
 `;

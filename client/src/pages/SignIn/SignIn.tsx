@@ -36,6 +36,8 @@ const SignIn = () => {
   });
 
   // console.log(formik.values);
+  console.log(formik.errors);
+  console.log(formik.touched);
 
   return (
     <>
@@ -49,8 +51,10 @@ const SignIn = () => {
               placeholder="이메일을 입력하세요.."
               name="email"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.email}
             />
+            {formik.errors.email && <S.Error>{formik.errors.email}</S.Error>}
             <S.SignInButton type="submit">Sign In</S.SignInButton>
           </S.Form>
           <S.SignInFacebookButton>Sign in with Facebook</S.SignInFacebookButton>
