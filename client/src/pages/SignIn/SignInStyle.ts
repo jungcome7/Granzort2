@@ -1,5 +1,33 @@
 import { Button } from '../../components/common/Button';
 import styled from 'styled-components';
+import {
+  Formik as FFormik,
+  Form as FForm,
+  Field as FField,
+  ErrorMessage as FErrorMessage,
+} from 'formik';
+
+export const Formik = styled(FFormik)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+export const Form = styled(FForm)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: red;
+`;
+export const Field = styled(FField)`
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  width: 180px;
+`;
+export const ErrorMessage = styled(FErrorMessage)``;
+export const Message = styled.div`
+  color: red;
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -21,19 +49,6 @@ export const Logo = styled.div`
   margin: 40px;
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const Input = styled.input`
-  background-color: white;
-  padding: 10px;
-  margin: 10px;
-  width: 180px;
-`;
-
 export const SignInButton = styled(Button)`
   margin: 5px;
   width: 200px;
@@ -49,8 +64,4 @@ export const SignInGoogleButton = styled(Button)`
   border: 2px solid grey;
   background-color: white;
   color: grey;
-`;
-
-export const Error = styled.div`
-  color: red;
 `;
