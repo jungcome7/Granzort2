@@ -9,13 +9,10 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <>
-      <GlobalStyle />
-      <Story />
+      <MemoryRouter>
+          <GlobalStyle />
+          <Story />
+      </MemoryRouter>
     </>
-  ),
-  (Story) => (
-    <MemoryRouter>
-      <Story />
-    </MemoryRouter>
   ),
 ];

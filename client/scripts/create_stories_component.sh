@@ -17,7 +17,7 @@ echo `echo "import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 export default {
-  title: 'pages/${FILE_NAME}',
+  title: 'components/${FILE_NAME}',
   component: ${FILE_NAME},
 } as Meta;
 
