@@ -11,7 +11,7 @@
 |FE|BE|etc|
 |-|-|-|
 |typescript|typescript|docker|
-|react|node.js|aws ec2,s3|
+|react|node.js|aws ec2, s3, route53, rds|
 |react-router|express|google-analytics|
 |redux|mongoDB|CI/CD|
 |formik|jest|nginx|
