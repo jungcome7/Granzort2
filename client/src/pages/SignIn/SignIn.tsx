@@ -3,12 +3,36 @@ import { useFormik } from 'formik';
 import { Header } from '../../components/Header';
 import * as S from './SignInStyle';
 
+type Errors = {
+  email?: string;
+};
+
+type FormValues = {
+  email?: string;
+};
+
+const initialValues: FormValues = {
+  email: '',
+};
+
+const onSubmit = (values: FormValues) => console.log(values);
+
+const validate = (values: FormValues) => {
+  const errors: Errors = {};
+
+  if (!values.email) {
+    errors.email = 'Required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email format';
+  }
+  return errors;
+};
+
 const SignIn = () => {
   const formik = useFormik({
-    initialValues: {
-      email: '',
-    },
-    onSubmit: (values) => console.log(values),
+    initialValues,
+    onSubmit,
+    validate,
   });
 
   // console.log(formik.values);
