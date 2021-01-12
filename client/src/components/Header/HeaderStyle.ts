@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: space-between;
   background-color: yellow;
   height: 50px;
+  cursor: pointer;
 `;
 
 export const Logo = styled.div``;

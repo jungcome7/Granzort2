@@ -6,7 +6,9 @@ import * as S from './HeaderStyle';
 const Header = () => {
   return (
     <S.Container>
-      <S.Logo>GRANZORT</S.Logo>
+      <Link to="/">
+        <S.Logo>GRANZORT</S.Logo>
+      </Link>
       <Link to="/signin">
         <Button>이것은 버튼이다</Button>
       </Link>
