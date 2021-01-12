@@ -24,8 +24,7 @@ export const Field = styled(FField)`
   margin: 10px;
   width: 180px;
 `;
-export const ErrorMessage = styled(FErrorMessage)``;
-export const Message = styled.div`
+export const ErrorMessage = styled(FErrorMessage)`
   color: red;
 `;
 
@@ -49,9 +48,14 @@ export const Logo = styled.div`
   margin: 40px;
 `;
 
-export const SignInButton = styled(Button)`
+type SignInButtonProps = {
+  disabled?: boolean;
+};
+
+export const SignInButton = styled(Button)<SignInButtonProps>`
   margin: 5px;
   width: 200px;
+  background-color: ${(props) => props.disabled && 'red'};
 `;
 export const SignInFacebookButton = styled(Button)`
   margin: 5px;
