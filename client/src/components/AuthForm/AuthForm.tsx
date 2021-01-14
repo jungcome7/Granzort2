@@ -1,17 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useEmailFormik from '../../hooks/useEmailFormik';
-import * as S from './SignInFormStyle';
+import * as S from './AuthFormStyle';
 
-const SignInForm = () => {
+type AuthFormProps = {
+  type: 'signIn' | 'signUp';
+};
+
+const AuthForm = ({ type }: AuthFormProps) => {
   const { initialValues, onSubmit, validationSchema } = useEmailFormik();
+
+  type Mapper = {
+    signIn: string;
+    signUp: string;
+    moveTo: 'signUp' | 'signIn';
+  };
+
+  const mapper: Mapper = {
+    signIn: 'Sign In',
+    signUp: 'Sign Up',
+    moveTo: type === 'signIn' ? 'signUp' : 'signIn',
+  };
 
   return (
     <>
       <S.Container>
         <S.Box>
           <S.Logo>GRANZORT</S.Logo>
-          <S.SignInArea>
+          <S.AuthWrapper>
             <S.Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
@@ -36,23 +52,27 @@ const SignInForm = () => {
                       />
                     </S.EmailWrapper>
                     <S.ErrorMessage name="email" component="div" />
-                    <S.SignInButton
+                    <S.AuthButton
                       type="submit"
                       disabled={formik.isSubmitting || !formik.isValid}
                     >
-                      Sign In
-                    </S.SignInButton>
+                      {mapper[type]}
+                    </S.AuthButton>
                   </S.Form>
                 );
               }}
             </S.Formik>
-            <S.SignInFacebookButton>
-              Sign in with Facebook
-            </S.SignInFacebookButton>
-            <S.SignInGoogleButton>Sign in with Google</S.SignInGoogleButton>
-          </S.SignInArea>
-          <Link to="/signUp">
-            <S.MoveToSignUpButton>Sign Up</S.MoveToSignUpButton>
+            <S.AuthFacebookButton>
+              {`${mapper[type]} with Facebook`}
+            </S.AuthFacebookButton>
+            <S.AuthGoogleButton>
+              {`${mapper[type]} with Facebook`}
+            </S.AuthGoogleButton>
+          </S.AuthWrapper>
+          <Link to={`/${mapper.moveTo}`}>
+            <S.MoveToButton>{`Move To ${
+              mapper[mapper.moveTo]
+            }`}</S.MoveToButton>
           </Link>
         </S.Box>
       </S.Container>
@@ -60,4 +80,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default AuthForm;

@@ -8,7 +8,7 @@ const Header = () => {
       <Link to="/">
         <S.Logo>GRANZORT</S.Logo>
       </Link>
-      <Link to="/signin">
+      <Link to="/signIn">
         <S.SignInButton>Sign In</S.SignInButton>
       </Link>
     </S.Container>

@@ -1,13 +1,13 @@
 import React from 'react';
+import { AuthForm } from '../../components/AuthForm';
 import { Header } from '../../components/Header';
-import { SignUpForm } from '../../components/SignUpForm';
 import * as S from './SignUpStyle';
 
 const SignUp = () => {
   return (
     <S.Container>
       <Header />
-      <SignUpForm />
+      <AuthForm type="signUp" />
     </S.Container>
   );
 };

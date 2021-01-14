@@ -24,7 +24,7 @@ export const Box = styled.div`
   background-color: ${PALETTE.WHITE};
 `;
 
-export const SignInArea = styled.div`
+export const AuthWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,11 +79,11 @@ export const Logo = styled.div`
   font-size: 20px;
 `;
 
-type SignInButtonProps = {
+type AuthButtonProps = {
   disabled?: boolean;
 };
 
-export const SignInButton = styled(Button)<SignInButtonProps>`
+export const AuthButton = styled(Button)<AuthButtonProps>`
   margin: 5px;
   width: 300px;
   font-size: 18px;
@@ -96,7 +96,8 @@ export const SignInButton = styled(Button)<SignInButtonProps>`
   }
 `;
 
-export const SignInFacebookButton = styled(Button)`
+
+export const AuthFacebookButton = styled(Button)`
   margin: 5px;
   width: 300px;
   font-size: 18px;
@@ -107,7 +108,7 @@ export const SignInFacebookButton = styled(Button)`
   }
 `;
 
-export const SignInGoogleButton = styled(Button)`
+export const AuthGoogleButton = styled(Button)`
   margin: 5px;
   width: 300px;
   font-size: 18px;
@@ -120,7 +121,7 @@ export const SignInGoogleButton = styled(Button)`
   }
 `;
 
-export const MoveToSignUpButton = styled(Button)`
+export const MoveToButton = styled(Button)`
   position: absolute;
   right: 0;
   bottom: 0;
