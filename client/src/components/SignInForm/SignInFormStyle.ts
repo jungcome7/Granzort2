@@ -4,10 +4,10 @@ import {
   Form as FForm,
   Formik as FFormik,
 } from 'formik';
-import React from 'react';
 import styled from 'styled-components';
 import PALETTE from '../../styles/color-variables';
 import { Button } from '../common/Button';
+import Heart from '../icons/Heart';
 
 export const Container = styled.div`
   display: flex;
@@ -17,7 +17,6 @@ export const Container = styled.div`
 
 export const Box = styled.div`
   margin-top: 100px;
-  background-color: lightgrey;
   border-radius: 10px;
   width: 600px;
   height: 600px;
@@ -48,30 +47,17 @@ export const Label = styled.label`
   background-image: url('../../../assets/email.svg');
 `;
 
-const SvgAttrs = styled.svg.attrs({
-  xmlns: 'http://www.w3.org/2000/svg',
-})``;
-
-const SvgExpandIcon = styled(SvgAttrs)`
-  width: 13.5px;
-  height: 6.9px;
-  margin: 3px 5px 2px 9px;
-`;
-
-export const ExpandIcon = () => (
-  <SvgExpandIcon viewBox="0 0 10 6" fill="none">
-    <path d="M0 0.5L5 5.5L10 0.5H0Z" fill="grey" />
-  </SvgExpandIcon>
-);
-
 export const EmailWrapper = styled.div`
   display: flex;
+  align-items: center;
   width: 300px;
-  padding: 14px 0;
+  padding: 4px 0;
   margin: 10px;
   border: 1px solid ${PALETTE.GRAY[2]};
   border-radius: 5px;
 `;
+
+export const HeartIcon = styled(Heart)``;
 
 export const Field = styled(FField)`
   background-color: white;
@@ -146,4 +132,7 @@ export const MoveToSignUpButton = styled(Button)`
   color: ${PALETTE.GRAY[3]};
   font-weight: 600;
   font-size: 18px;
+  &:hover {
+    color: ${PALETTE.BLACK};
+  }
 `;

@@ -22,6 +22,9 @@ export const SignInButton = styled(Button)`
   margin: 0 20px;
   background-color: ${PALETTE.GRAY[3]};
   border-radius: 99px;
-  padding: 7px 13px;
-  font-size: 16px;
+  padding: 7px 15px;
+  font-size: 14px;
+  &:hover {
+    background-color: ${PALETTE.BLACK};
+  }
 `;

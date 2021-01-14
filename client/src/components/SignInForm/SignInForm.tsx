@@ -24,7 +24,9 @@ const SignInForm = () => {
                   <S.Form>
                     <S.EmailWrapper>
                       <S.Label htmlFor="email">
-                        <S.ExpandIcon />
+                        <S.HeartIcon
+                          fill={formik.isValid && formik.values.email}
+                        />
                       </S.Label>
                       <S.Field
                         type="text"
