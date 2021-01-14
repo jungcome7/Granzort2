@@ -66,7 +66,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
               {`${mapper[type]} with Facebook`}
             </S.AuthFacebookButton>
             <S.AuthGoogleButton>
-              {`${mapper[type]} with Facebook`}
+              {`${mapper[type]} with Google`}
             </S.AuthGoogleButton>
           </S.AuthWrapper>
           <Link to={`/${mapper.moveTo}`}>
