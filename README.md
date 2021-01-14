@@ -3,6 +3,7 @@
 ### Convention
 `env` : env settings  
 `feat` : feature  
+`style` : style  
 `test` : codes for testing written with storybook, jest  
 `chore` : chore  
 `fix` : fix  
