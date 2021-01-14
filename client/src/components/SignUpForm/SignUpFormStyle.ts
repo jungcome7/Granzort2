@@ -5,7 +5,7 @@ import {
   Formik as FFormik,
 } from 'formik';
 import styled from 'styled-components';
-import { Button } from '../../components/common/Button';
+import { Button } from '../common/Button';
 
 export const Formik = styled(FFormik)`
   display: flex;
@@ -42,7 +42,7 @@ export const Box = styled.div`
   position: relative;
 `;
 
-export const SignInArea = styled.div`
+export const SignUpArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,23 +55,23 @@ export const Logo = styled.div`
   align-items: center;
 `;
 
-type SignInButtonProps = {
+type SignUpButtonProps = {
   disabled?: boolean;
 };
 
-export const SignInButton = styled(Button)<SignInButtonProps>`
+export const SignUpButton = styled(Button)<SignUpButtonProps>`
   margin: 5px;
   width: 200px;
   background-color: ${(props) => props.disabled && 'red'};
 `;
 
-export const SignInFacebookButton = styled(Button)`
+export const SignUpFacebookButton = styled(Button)`
   margin: 5px;
   width: 200px;
   background-color: #1877f2;
 `;
 
-export const SignInGoogleButton = styled(Button)`
+export const SignUpGoogleButton = styled(Button)`
   margin: 5px;
   width: 200px;
   border: 2px solid grey;
@@ -79,7 +79,7 @@ export const SignInGoogleButton = styled(Button)`
   color: grey;
 `;
 
-export const MoveToSignUpButton = styled(Button)`
+export const MoveToSignInButton = styled(Button)`
   position: absolute;
   right: 0;
   bottom: 0;

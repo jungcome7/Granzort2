@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
-import * as S from './SignInFormStyle';
+import * as S from './SignUpFormStyle';
 
 type FormValues = {
   email?: string;
@@ -29,7 +29,7 @@ const SignInForm = () => {
       <S.Container>
         <S.Box>
           <S.Logo>GRANZORT</S.Logo>
-          <S.SignInArea>
+          <S.SignUpArea>
             <S.Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
@@ -46,23 +46,23 @@ const SignInForm = () => {
                       name="email"
                     />
                     <S.ErrorMessage name="email" component="div" />
-                    <S.SignInButton
+                    <S.SignUpButton
                       type="submit"
                       disabled={formik.isSubmitting || !formik.isValid}
                     >
-                      Sign In
-                    </S.SignInButton>
+                      Sign Up
+                    </S.SignUpButton>
                   </S.Form>
                 );
               }}
             </S.Formik>
-            <S.SignInFacebookButton>
-              Sign in with Facebook
-            </S.SignInFacebookButton>
-            <S.SignInGoogleButton>Sign in with Google</S.SignInGoogleButton>
-          </S.SignInArea>
-          <Link to="/signUp">
-            <S.MoveToSignUpButton>Sign Up</S.MoveToSignUpButton>
+            <S.SignUpFacebookButton>
+              Sign up with Facebook
+            </S.SignUpFacebookButton>
+            <S.SignUpGoogleButton>Sign up with Google</S.SignUpGoogleButton>
+          </S.SignUpArea>
+          <Link to="/signIn">
+            <S.MoveToSignInButton>Move to Sign In</S.MoveToSignInButton>
           </Link>
         </S.Box>
       </S.Container>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { SignIn } from './pages/SignIn';
+import { Route, Switch } from 'react-router-dom';
 import { Main } from './pages/Main';
+import { SignIn } from './pages/SignIn';
+import { SignUp } from './pages/SignUp';
 import GlobalStyle from './styles/GlobalStyle';
 
 const App = () => {
@@ -14,6 +15,9 @@ const App = () => {
         </Route>
         <Route path="/signIn" exact>
           <SignIn />
+        </Route>
+        <Route path="/signUp" exact>
+          <SignUp />
         </Route>
       </Switch>
     </>
