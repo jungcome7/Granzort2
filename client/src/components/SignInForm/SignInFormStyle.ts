@@ -84,4 +84,7 @@ export const MoveToSignUpButton = styled(Button)`
   right: 0;
   bottom: 0;
   margin: 20px;
+  background-color: transparent;
+  color: black;
+  font-weight: 600;
 `;

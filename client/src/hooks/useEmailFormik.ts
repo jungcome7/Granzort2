@@ -1,10 +1,10 @@
 import * as Yup from 'yup';
 
-const useEmailFormik = () => {
-  type FormValues = {
-    email?: string;
-  };
+export type FormValues = {
+  email?: string;
+};
 
+const useEmailFormik = () => {
   const initialValues: FormValues = {
     email: '',
   };
