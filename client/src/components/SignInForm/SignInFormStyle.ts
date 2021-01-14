@@ -43,9 +43,7 @@ export const Form = styled(FForm)`
   color: red;
 `;
 
-export const Label = styled.label`
-  background-image: url('../../../assets/email.svg');
-`;
+export const Label = styled.label``;
 
 export const EmailWrapper = styled.div`
   display: flex;
@@ -90,12 +88,11 @@ export const SignInButton = styled(Button)<SignInButtonProps>`
   width: 300px;
   font-size: 18px;
   padding: 14px;
-
   background-color: ${(props) =>
-    props.disabled ? PALETTE.GRAY[2] : PALETTE.MAIN};
+    props.disabled ? PALETTE.GRAY[1] : PALETTE.MAIN};
   &:hover {
-    opacity: 0.9;
-    cursor: ${(props) => props.disabled && 'not-allowed'};
+    opacity: ${(props) => !props.disabled && 0.9};
+    cursor: ${(props) => props.disabled && 'default'};
   }
 `;
 
