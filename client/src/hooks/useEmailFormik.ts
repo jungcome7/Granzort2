@@ -10,15 +10,12 @@ const useEmailFormik = () => {
   };
 
   const onSubmit = (values: FormValues, onSubmitProps: any) => {
-    console.log(values);
-    console.log(onSubmitProps);
-    // Submit 성공 api response를 받은 후
     onSubmitProps.setSubmitting(false);
     onSubmitProps.resetForm();
   };
 
   const validationSchema = Yup.object({
-    email: Yup.string().email('Invalid email format').required('Required'),
+    email: Yup.string().email('Invalid Email').required('Required'),
   });
 
   return { initialValues, onSubmit, validationSchema };

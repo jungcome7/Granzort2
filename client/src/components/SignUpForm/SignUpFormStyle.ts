@@ -5,7 +5,14 @@ import {
   Formik as FFormik,
 } from 'formik';
 import styled from 'styled-components';
+import PALETTE from '../../styles/color-variables';
 import { Button } from '../common/Button';
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const Formik = styled(FFormik)`
   display: flex;
@@ -28,11 +35,6 @@ export const ErrorMessage = styled(FErrorMessage)`
   color: red;
 `;
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 export const Box = styled.div`
   margin-top: 50px;
   background-color: lightgrey;
@@ -40,6 +42,7 @@ export const Box = styled.div`
   width: 500px;
   height: 500px;
   position: relative;
+  background-color: ${PALETTE.WHITE};
 `;
 
 export const SignUpArea = styled.div`

@@ -22,11 +22,17 @@ const SignInForm = () => {
                 console.log(formik);
                 return (
                   <S.Form>
-                    <S.Field
-                      type="text"
-                      placeholder="이메일을 입력하세요.."
-                      name="email"
-                    />
+                    <S.EmailWrapper>
+                      <S.Label htmlFor="email">
+                        <S.ExpandIcon />
+                      </S.Label>
+                      <S.Field
+                        type="text"
+                        placeholder="granzort@domain.com"
+                        name="email"
+                        id="email"
+                      />
+                    </S.EmailWrapper>
                     <S.ErrorMessage name="email" component="div" />
                     <S.SignInButton
                       type="submit"

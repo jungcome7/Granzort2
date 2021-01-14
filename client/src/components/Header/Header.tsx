@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../common/Button';
 import * as S from './HeaderStyle';
 
 const Header = () => {
@@ -10,7 +9,7 @@ const Header = () => {
         <S.Logo>GRANZORT</S.Logo>
       </Link>
       <Link to="/signin">
-        <Button>이것은 버튼이다</Button>
+        <S.SignInButton>Sign In</S.SignInButton>
       </Link>
     </S.Container>
   );
