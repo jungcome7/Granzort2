@@ -29,3 +29,22 @@ export const createPasswordHash = (
     }
   });
 };
+
+
+export const verifyPassword = (password, passwordHash, salt) => {
+    return new Promise((resolve, reject) => {
+      try {
+        crypto.pbkdf2(password, salt, 104236, 64, 'sha512', (err, key) => {
+          if (err) {
+            reject(err);
+          }
+          if (key.toString('base64') === passwordHash) {
+            resolve(true);
+          }
+          resolve(false);
+        });
+      } catch (e) {
+        resolve(false);
+      }
+    });
+  }
