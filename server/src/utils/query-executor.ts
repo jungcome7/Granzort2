@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { pool } from '../connection/db';
 import { databaseErrorHandler } from './error-handler';
 import { promiseHandler } from './promise-handler';

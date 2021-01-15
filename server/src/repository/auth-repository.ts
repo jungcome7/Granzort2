@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   insertQueryExecuter,
   selectQueryExecuter,
@@ -7,21 +8,6 @@ export type User = {
   id: number;
   name: string;
 };
-
-export interface ISocialUser {
-  social_id: number;
-  name: string;
-}
-
-export interface ILoginBody {
-  userId: string;
-  password: string;
-}
-
-export interface ISocialLoginBody {
-  socialId: string;
-}
-
 export class UserRepo {
   static async createByEmail(email: string) {
     const createByEmailQuery = `
