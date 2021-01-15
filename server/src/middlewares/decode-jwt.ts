@@ -10,7 +10,6 @@ export const decodeJWT = async (
   next: NextFunction
 ) => {
   const token = req.headers[TOKEN_KEY].split(' ')[1];
-  console.log(token)
   if (token) {
     const user = await verifyJWT(token as string);
     req.user = user;

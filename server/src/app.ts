@@ -3,7 +3,6 @@ dotenv.config();
 import express from 'express';
 import morgan from 'morgan';
 import passport from 'passport';
-import passportConfig from './utils/passport'
 import router from './routes';
 import { errorHandler } from './middlewares/error-handler';
 

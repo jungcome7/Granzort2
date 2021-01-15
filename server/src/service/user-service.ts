@@ -6,7 +6,7 @@ import { createPasswordHash, PasswordAndSalt } from '../utils/salt';
 export const signUpByUserId = async (req: Request, res: Response) => {
   const { userId, password } = req.body;
   const passwordAndSalt: PasswordAndSalt = await createPasswordHash(password);
-  const insertId = UserRepo.createByUserId(userId, passwordAndSalt);
+  const insertId = await UserRepo.createByUserId(userId, passwordAndSalt);
   res.status(201).json(insertId);
 };
 

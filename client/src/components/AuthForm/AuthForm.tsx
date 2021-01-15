@@ -35,7 +35,6 @@ const AuthForm = ({ type }: AuthFormProps) => {
               onSubmit={onSubmit}
             >
               {(formik) => {
-                console.log(formik);
                 return (
                   <S.Form>
                     <S.EmailWrapper>
