@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import passport from 'passport';
+import { signUpByUserId } from '../service/user-service';
 
 const router = Router();
 
-router.post('/signup/email');
+router.post('/signUp', signUpByUserId);
 
-router.post('/signin/email')
+router.post('/signIn');
 
 export default router;

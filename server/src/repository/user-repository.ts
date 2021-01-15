@@ -3,6 +3,7 @@ import {
   insertQueryExecuter,
   selectQueryExecuter,
 } from '../utils/query-executor';
+import { PasswordAndSalt } from '../utils/salt';
 
 export type User = {
   id: number;
@@ -10,12 +11,16 @@ export type User = {
 };
 
 export class UserRepo {
-  static async createByUserId(userId: string) {
+  static async createByUserId(
+    userId: string,
+    passwordAndSalt: PasswordAndSalt,
+  ) {
+    const { password, salt } = passwordAndSalt;
     const createByUserIdQuery = `
       INSERT INTO 
-        user(user_id, created_at) 
+        user(user_id, password, salt, created_at) 
       VALUES
-        ("${userId}", NOW());
+        ("${userId}", "${password}", "${salt}", NOW());
     `;
 
     return await insertQueryExecuter(createByUserIdQuery);
