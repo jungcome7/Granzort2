@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-export const TOKEN_KEY = '';
+export const TOKEN_KEY = 'authorization';
 
 const devURL = 'http://localhost:';
 const prodURL = '';
@@ -14,11 +14,11 @@ export const granzort = Axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
-// export const granzortAuth = (token: string) =>
-//   Axios.create({
-//     baseURL: apiURL,
-//     headers: {
-//       'Content-Type': 'application/json',
-//       [TOKEN_KEY]: token,
-//     },
-//   });
+export const granzortAuth = (token: string) =>
+  Axios.create({
+    baseURL: apiURL,
+    headers: {
+      'Content-Type': 'application/json',
+      [TOKEN_KEY]: token,
+    },
+  });
