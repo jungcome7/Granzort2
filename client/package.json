@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --config webpack.dev.js",
-    "test":"jest",
+    "test": "jest",
     "sb": "start-storybook -p 6006",
     "build:sb": "build-storybook"
   },
