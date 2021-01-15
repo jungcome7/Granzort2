@@ -15,8 +15,6 @@ export const signInByUserId = async (req: Request, res: Response) => {
   res.status(200).json({ accessToken });
 };
 
-// export const signOut = async (req: Request, res: Response) => {};
-
 export const getCurrentUser = async (req: Request, res: Response) => {
   res.json(req.user);
 };
