@@ -6,37 +6,38 @@ import {
 
 export type User = {
   id: number;
-  name: string;
+  user_id: string;
 };
+
 export class UserRepo {
-  static async createByEmail(email: string) {
-    const createByEmailQuery = `
+  static async createByUserId(userId: string) {
+    const createByUserIdQuery = `
       INSERT INTO 
-        user(email, created_at) 
+        user(user_id, created_at) 
       VALUES
-        ("${email}", NOW());
+        ("${userId}", NOW());
     `;
 
-    return await insertQueryExecuter(createByEmailQuery);
+    return await insertQueryExecuter(createByUserIdQuery);
   }
 
-  static async findByEmail(email: string): Promise<User> {
-    const findByEmailQuery = `
+  static async findByUserId(userId: string): Promise<User> {
+    const findByUserIdQuery = `
       SELECT
-        id, email
+        id, user_id
       FROM
         user
       WHERE
-        email=${email};
+        user_id=${userId};
     `;
-    const [user, _] = await selectQueryExecuter<User>(findByEmailQuery);
+    const [user, _] = await selectQueryExecuter<User>(findByUserIdQuery);
     return user;
   }
 
   static async findById(id: number): Promise<User> {
     const findByIdQuery = `
       SELECT
-        id, email
+        id, user_id
       FROM
         user
       WHERE
