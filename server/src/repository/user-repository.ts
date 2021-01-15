@@ -9,7 +9,7 @@ export type User = {
   id: number;
   user_id: string;
   password: string;
-  salt:string;
+  salt: string;
 };
 
 export class UserRepo {
@@ -44,7 +44,7 @@ export class UserRepo {
   static async findById(id: number): Promise<User> {
     const findByIdQuery = `
       SELECT
-        *
+        id, user_id
       FROM
         user
       WHERE

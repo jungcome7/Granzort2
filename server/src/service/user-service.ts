@@ -11,18 +11,12 @@ export const signUpByUserId = async (req: Request, res: Response) => {
 };
 
 export const signInByUserId = async (req: Request, res: Response) => {
-  const accessToken = createJWT(req.user.user_id)
-  console.log(req)
+  const accessToken = createJWT(req.user['id']);
   res.status(200).json({ accessToken });
 };
 
-// exports.loginController = async (req, res) => {
-//   const accessToken = createAccessToken(req.user.id);
-//   res.status(200).json({ accessToken });
-// };
-
 // export const signOut = async (req: Request, res: Response) => {};
 
-// export const getCurrentUser = async (req: Request, res: Response) => {
-//   res.json(req.user);
-// };
+export const getCurrentUser = async (req: Request, res: Response) => {
+  res.json(req.user);
+};

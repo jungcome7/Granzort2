@@ -1,6 +1,11 @@
 import { Router } from 'express';
-import { signUpByUserId, signInByUserId } from '../service/user-service';
+import {
+  signUpByUserId,
+  signInByUserId,
+  getCurrentUser,
+} from '../service/user-service';
 import { validateBody } from '../middlewares/validate-body';
+import { decodeJWT } from '../middlewares/decode-jwt';
 import passport from '../utils/passport';
 
 const router = Router();
@@ -23,6 +28,6 @@ router.post(
   signInByUserId,
 );
 
-// router.get('/currentUser', decodeJWT, getCurrentUser);
+router.get('/currentUser', decodeJWT, getCurrentUser);
 
 export default router;
