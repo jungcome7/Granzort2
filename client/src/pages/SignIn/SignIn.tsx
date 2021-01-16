@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import API from '../../apis';
+import React from 'react';
 import { AuthForm } from '../../components/AuthForm';
 import { Header } from '../../components/Header';
 import * as S from './SignInStyle';

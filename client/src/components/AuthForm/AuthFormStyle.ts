@@ -92,7 +92,7 @@ export const ErrorMessage = styled(FErrorMessage)`
 `;
 
 export const Logo = styled.div`
-  margin: 70px 0;
+  margin: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;

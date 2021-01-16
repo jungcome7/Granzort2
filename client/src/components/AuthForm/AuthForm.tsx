@@ -8,7 +8,12 @@ type AuthFormProps = {
 };
 
 const AuthForm = ({ type }: AuthFormProps) => {
-  const { initialValues, onSubmit, validationSchema } = useUserFormik();
+  const {
+    initialValues,
+    onSubmit,
+    signInValidationSchema,
+    signUpValidationSchema,
+  } = useUserFormik();
 
   type Mapper = {
     signIn: string;
@@ -30,7 +35,11 @@ const AuthForm = ({ type }: AuthFormProps) => {
           <S.AuthWrapper>
             <S.Formik
               initialValues={initialValues}
-              validationSchema={validationSchema}
+              validationSchema={
+                type === 'signUp'
+                  ? signUpValidationSchema
+                  : signInValidationSchema
+              }
               // validateOnMount
               onSubmit={onSubmit}
             >
@@ -39,9 +48,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
                   <S.Form>
                     <S.UserIdWrapper>
                       <S.Label htmlFor="user-id">
-                        <S.HeartIcon
-                          fill={formik.isValid && formik.values.email}
-                        />
+                        <S.HeartIcon fill={formik.values.userId} />
                       </S.Label>
                       <S.Field
                         type="text"
@@ -54,9 +61,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
 
                     <S.PasswordWrapper>
                       <S.Label htmlFor="password">
-                        <S.HeartIcon
-                          fill={formik.isValid && formik.values.email}
-                        />
+                        <S.HeartIcon fill={formik.values.password} />
                       </S.Label>
                       <S.Field
                         type="password"
@@ -67,12 +72,14 @@ const AuthForm = ({ type }: AuthFormProps) => {
                     </S.PasswordWrapper>
                     <S.ErrorMessage name="password" component="div" />
 
-                    {type === 'signIn' && (
+                    {type === 'signUp' && (
                       <>
                         <S.PasswordConfirmWrapper>
                           <S.Label htmlFor="password-confirm">
                             <S.HeartIcon
-                              fill={formik.isValid && formik.values.email}
+                              fill={
+                                formik.isValid && formik.values.passwordConfirm
+                              }
                             />
                           </S.Label>
                           <S.Field
@@ -92,6 +99,8 @@ const AuthForm = ({ type }: AuthFormProps) => {
                     <S.AuthButton
                       type="submit"
                       disabled={formik.isSubmitting || !formik.isValid}
+                      onClick={() => 
+                        console.log(formik.values)}
                     >
                       {mapper[type]}
                     </S.AuthButton>

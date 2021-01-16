@@ -18,7 +18,12 @@ const useUserFormik = () => {
     onSubmitProps.resetForm();
   };
 
-  const validationSchema = Yup.object({
+  const signInValidationSchema = Yup.object({
+    userId: Yup.string().required('Required'),
+    password: Yup.string().required('Password is required'),
+  });
+
+  const signUpValidationSchema = Yup.object({
     userId: Yup.string().required('Required'),
     password: Yup.string().required('Password is required'),
     passwordConfirm: Yup.string()
@@ -26,7 +31,12 @@ const useUserFormik = () => {
       .required('Password Confirmation required'),
   });
 
-  return { initialValues, onSubmit, validationSchema };
+  return {
+    initialValues,
+    onSubmit,
+    signInValidationSchema,
+    signUpValidationSchema,
+  };
 };
 
 export default useUserFormik;

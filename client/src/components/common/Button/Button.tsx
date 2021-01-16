@@ -5,6 +5,7 @@ export type ButtonProps = {
   children?: string;
   type?: 'submit' | 'reset';
   disabled?: boolean;
+  onClick?: () => void;
 };
 
 const Button = (props: ButtonProps) => {
