@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+import useUser from '../hooks/useUser';
 
 export type FormValues = {
   userId?: string;
@@ -7,6 +8,9 @@ export type FormValues = {
 };
 
 const useUserFormik = () => {
+  const { user, requestSignUp } = useUser();
+  console.log(user);
+
   const initialValues: FormValues = {
     userId: '',
     password: '',
@@ -14,8 +18,11 @@ const useUserFormik = () => {
   };
 
   const onSubmit = (values: FormValues, onSubmitProps: any) => {
+    const { userId, password } = values;
+    requestSignUp(userId, password);
     onSubmitProps.setSubmitting(false);
     onSubmitProps.resetForm();
+    console.log(values);
   };
 
   const signInValidationSchema = Yup.object({

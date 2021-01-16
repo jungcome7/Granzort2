@@ -10,8 +10,7 @@ import {
 } from './actions';
 
 const initialState: UserState = {
-  userId: '',
-  password: '',
+  userId:'', 
   error: null,
 };
 

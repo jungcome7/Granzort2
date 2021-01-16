@@ -15,7 +15,7 @@ export const SIGN_OUT = 'user/SIGN_OUT';
 export const signUp = createAction(SIGN_UP, ({ userId, password }: any) => ({
   userId,
   password,
-}))<User>();
+}))();
 
 export const signUpSuccess = createAction(
   SIGN_UP_SUCCESS,
@@ -30,7 +30,7 @@ export const signUpFailure = createAction(
 export const signIn = createAction(SIGN_IN, ({ userId, password }: any) => ({
   userId,
   password,
-}))<User>();
+}))();
 export const signInSuccess = createAction(SIGN_IN_SUCCESS)();
 export const signInFailure = createAction(SIGN_IN_FAILURE)();
 

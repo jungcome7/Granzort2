@@ -5,7 +5,6 @@ export type UserAction = ActionType<typeof actions>;
 
 export type User = {
   userId: string;
-  password: string;
   error: any;
 };
 

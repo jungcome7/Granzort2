@@ -64,7 +64,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
                         <S.HeartIcon fill={formik.values.password} />
                       </S.Label>
                       <S.Field
-                        type="password"
+                        type="new-password"
                         placeholder="비밀번호를 입력하세요.."
                         name="password"
                         id="password"
@@ -83,7 +83,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
                             />
                           </S.Label>
                           <S.Field
-                            type="password"
+                            type="new-password"
                             placeholder="비밀번호를 입력하세요.."
                             name="passwordConfirm"
                             id="password-confirm"
@@ -99,8 +99,6 @@ const AuthForm = ({ type }: AuthFormProps) => {
                     <S.AuthButton
                       type="submit"
                       disabled={formik.isSubmitting || !formik.isValid}
-                      onClick={() => 
-                        console.log(formik.values)}
                     >
                       {mapper[type]}
                     </S.AuthButton>
