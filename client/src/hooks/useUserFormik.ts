@@ -1,12 +1,12 @@
 import * as Yup from 'yup';
 
 export type FormValues = {
-  email?: string;
+  userId?: string;
 };
 
-const useEmailFormik = () => {
+const useUserFormik = () => {
   const initialValues: FormValues = {
-    email: '',
+    userId: '',
   };
 
   const onSubmit = (values: FormValues, onSubmitProps: any) => {
@@ -15,10 +15,10 @@ const useEmailFormik = () => {
   };
 
   const validationSchema = Yup.object({
-    email: Yup.string().email('Invalid Email').required('Required'),
+    userId: Yup.string().required('Required'),
   });
 
   return { initialValues, onSubmit, validationSchema };
 };
 
-export default useEmailFormik;
+export default useUserFormik;

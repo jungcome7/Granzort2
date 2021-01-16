@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useEmailFormik from '../../hooks/useEmailFormik';
+import useUserFormik from '../../hooks/useUserFormik';
 import * as S from './AuthFormStyle';
 
 type AuthFormProps = {
@@ -8,7 +8,7 @@ type AuthFormProps = {
 };
 
 const AuthForm = ({ type }: AuthFormProps) => {
-  const { initialValues, onSubmit, validationSchema } = useEmailFormik();
+  const { initialValues, onSubmit, validationSchema } = useUserFormik();
 
   type Mapper = {
     signIn: string;
@@ -38,19 +38,19 @@ const AuthForm = ({ type }: AuthFormProps) => {
                 return (
                   <S.Form>
                     <S.EmailWrapper>
-                      <S.Label htmlFor="email">
+                      <S.Label htmlFor="user-id">
                         <S.HeartIcon
                           fill={formik.isValid && formik.values.email}
                         />
                       </S.Label>
                       <S.Field
                         type="text"
-                        placeholder="granzort@domain.com"
-                        name="email"
-                        id="email"
+                        placeholder="아이디를 입력하세요.."
+                        name="userId"
+                        id="user-id"
                       />
                     </S.EmailWrapper>
-                    <S.ErrorMessage name="email" component="div" />
+                    <S.ErrorMessage name="userId" component="div" />
                     <S.AuthButton
                       type="submit"
                       disabled={formik.isSubmitting || !formik.isValid}
