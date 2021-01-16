@@ -37,7 +37,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
               {(formik) => {
                 return (
                   <S.Form>
-                    <S.EmailWrapper>
+                    <S.UserIdWrapper>
                       <S.Label htmlFor="user-id">
                         <S.HeartIcon
                           fill={formik.isValid && formik.values.email}
@@ -49,8 +49,43 @@ const AuthForm = ({ type }: AuthFormProps) => {
                         name="userId"
                         id="user-id"
                       />
-                    </S.EmailWrapper>
+                    </S.UserIdWrapper>
                     <S.ErrorMessage name="userId" component="div" />
+
+                    <S.PasswordWrapper>
+                      <S.Label htmlFor="password">
+                        <S.HeartIcon
+                          fill={formik.isValid && formik.values.email}
+                        />
+                      </S.Label>
+                      <S.Field
+                        type="text"
+                        placeholder="비밀번호를 입력하세요.."
+                        name="password"
+                        id="password"
+                      />
+                    </S.PasswordWrapper>
+                    <S.ErrorMessage name="userId" component="div" />
+
+                    {type === 'signIn' && (
+                      <>
+                        <S.PasswordConfirmWrapper>
+                          <S.Label htmlFor="password">
+                            <S.HeartIcon
+                              fill={formik.isValid && formik.values.email}
+                            />
+                          </S.Label>
+                          <S.Field
+                            type="text"
+                            placeholder="비밀번호를 입력하세요.."
+                            name="password"
+                            id="password"
+                          />
+                        </S.PasswordConfirmWrapper>
+                        <S.ErrorMessage name="userId" component="div" />
+                      </>
+                    )}
+
                     <S.AuthButton
                       type="submit"
                       disabled={formik.isSubmitting || !formik.isValid}

@@ -45,12 +45,32 @@ export const Form = styled(FForm)`
 
 export const Label = styled.label``;
 
-export const EmailWrapper = styled.div`
+export const UserIdWrapper = styled.div`
   display: flex;
   align-items: center;
   width: 300px;
   padding: 4px 0;
-  margin: 10px;
+  margin: 5px;
+  border: 1px solid ${PALETTE.GRAY[2]};
+  border-radius: 5px;
+`;
+
+export const PasswordWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 300px;
+  padding: 4px 0;
+  margin: 5px;
+  border: 1px solid ${PALETTE.GRAY[2]};
+  border-radius: 5px;
+`;
+
+export const PasswordConfirmWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 300px;
+  padding: 4px 0;
+  margin: 5px;
   border: 1px solid ${PALETTE.GRAY[2]};
   border-radius: 5px;
 `;
@@ -95,7 +115,6 @@ export const AuthButton = styled(Button)<AuthButtonProps>`
     cursor: ${(props) => props.disabled && 'default'};
   }
 `;
-
 
 export const AuthFacebookButton = styled(Button)`
   margin: 5px;
