@@ -59,30 +59,33 @@ const AuthForm = ({ type }: AuthFormProps) => {
                         />
                       </S.Label>
                       <S.Field
-                        type="text"
+                        type="password"
                         placeholder="비밀번호를 입력하세요.."
                         name="password"
                         id="password"
                       />
                     </S.PasswordWrapper>
-                    <S.ErrorMessage name="userId" component="div" />
+                    <S.ErrorMessage name="password" component="div" />
 
                     {type === 'signIn' && (
                       <>
                         <S.PasswordConfirmWrapper>
-                          <S.Label htmlFor="password">
+                          <S.Label htmlFor="password-confirm">
                             <S.HeartIcon
                               fill={formik.isValid && formik.values.email}
                             />
                           </S.Label>
                           <S.Field
-                            type="text"
+                            type="password"
                             placeholder="비밀번호를 입력하세요.."
-                            name="password"
-                            id="password"
+                            name="passwordConfirm"
+                            id="password-confirm"
                           />
                         </S.PasswordConfirmWrapper>
-                        <S.ErrorMessage name="userId" component="div" />
+                        <S.ErrorMessage
+                          name="passwordConfirm"
+                          component="div"
+                        />
                       </>
                     )}
 
